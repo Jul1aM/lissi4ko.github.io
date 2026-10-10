@@ -160,6 +160,23 @@
 
         /* Пульсирующий индикатор LIVE */
         .live-badge {
+            display: none;             
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid #ff0000;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #ff3333;
+            position: absolute;
+            text-transform: uppercase;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
             display: flex;
             align-items: center;
             gap: 6px;
@@ -211,7 +228,7 @@
         }
         </style>
 </head>
-<body>
+</body>
 
     <div class="container">
         <!-- Никнейм -->
@@ -264,3 +281,37 @@
                 <span class="boosty-icon-wrapper"><img src="https://logo-teka.com/wp-content/uploads/2025/06/boosty-sign-logo.svg" alt="Boosty"></span>
                 Поддержка на Boosty
             </a> 
+        </div>
+            <script>
+        async function checkTwitchLive() {
+            const username = 'lissi4ko';
+            const badge = document.querySelector('.live-badge');
+            
+            if (!badge) return; 
+
+            try {
+                const url = `https://allorigins.win{encodeURIComponent('https://twitch.tv' + lissi4ko)}`;
+                const response = await fetch(url);
+                
+                if (!response.ok) throw new Error('Сеть не ответила');
+                
+                const proxyData = await response.json();
+                
+                const isLive = proxyData.contents && proxyData.contents.includes('"isLiveBroadcast":true');
+                
+                if (isLive) {
+                    badge.style.display = 'flex';
+                } else {
+                    badge.style.display = 'none';
+                }
+            } catch (error) {
+                console.error("Ошибка при проверке статуса Twitch:", error);
+                badge.style.display = 'none';
+            }
+        }
+
+        checkTwitchLive();
+        setInterval(checkTwitchLive, 120000);
+    </script>
+    </body>
+</html>
