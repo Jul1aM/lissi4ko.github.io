@@ -134,17 +134,16 @@
             filter: invert(41%) sepia(81%) saturate(5437%) hue-rotate(11deg) brightness(101%) contrast(105%);
         }
         
-        .twitch-card svg { 
-            fill: #a155ff; 
-        }
-        
         .twitch-card {
             background: rgba(161, 85, 255, 0.1);
             border: 2px solid #a155ff;
             box-shadow: 0 0 10px rgba(161, 85, 255, 0.3), inset 0 0 10px rgba(161, 85, 255, 0.2);
-            /* Внутренний отступ справа, чтобы текст не налезал на плашку на узких экранах */
-            padding-right: 85px !important;
-            justify-content: center;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            position: relative;
+            padding: 16px; 
         }
         
         .twitch-card:hover {
@@ -166,42 +165,16 @@
             font-weight: 800;
             letter-spacing: 0.5px;
             color: #ff3333;
-            position: absolute;
             text-transform: uppercase;
+            
+            position: absolute;
             right: 16px;
             top: 50%;
             transform: translateY(-50%);
+            
             animation: blink 2s infinite ease-in-out;
         }
 
-        .live-dot {
-            width: 6px;
-            height: 6px;
-            background-color: #ff3333;
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0% { opacity: 0.4; }
-            50% { opacity: 1; }
-            100% { opacity: 0.4; }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(0.9);
-                box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.7);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 6px rgba(255, 51, 51, 0);
-            }
-            100% {
-                transform: scale(0.9);
-                box-shadow: 0 0 0 0 rgba(255, 51, 51, 0);
-            }
-        }
 
         .link-card:not(.twitch-card):hover {
             transform: translateY(-2px);
