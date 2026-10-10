@@ -38,14 +38,10 @@
             gap: 12px;
             margin: 10px 0 12px 0;
             user-select: none;            
-            background: linear-gradient(135deg, #ff9d42 0%, #ff5e00 50%, #ff3c00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;            
             filter: drop-shadow(0 2px 8px rgba(255, 94, 0, 0.3));
             transition: transform 0.3s ease, filter 0.3s ease;
         }
         h1:hover {
-            transform: scale(1.03);
             filter: drop-shadow(0 0 15px rgba(255, 122, 0, 0.6));
         }
 
@@ -363,9 +359,10 @@
         .spark:nth-child(9) { width: 8px; height: 8px; left: 10%; animation-duration: 15s; animation-delay: 7s; }
 
         h1 span {
-            background: inherit;
+            background: linear-gradient(135deg, #ff9d42 0%, #ff5e00 50%, #ff3c00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
     </style>
