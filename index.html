@@ -83,49 +83,87 @@
             transform: scale(1.1);
         }
 
+        /* 1. TELEGRAM */
+        .tg-btn {
+            background: rgba(36, 161, 222, 0.08) !important;
+            border: 2px solid #24A1DE !important;
+            box-shadow: 0 0 10px rgba(36, 161, 222, 0.3), inset 0 0 10px rgba(36, 161, 222, 0.2) !important;
+        }
         .tg-btn svg { fill: #24A1DE; }
         .tg-btn:hover {
             background: #24A1DE !important;
             border-color: #24A1DE !important;
-            box-shadow: 0 6px 20px rgba(36, 161, 222, 0.4) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(36, 161, 222, 0.7), 0 0 40px rgba(36, 161, 222, 0.4) !important;
         }
 
+        /* 2. TIKTOK */
+        .tt-btn {
+            background: rgba(254, 44, 85, 0.05) !important;
+            border: 2px solid #fe2c55 !important;
+            box-shadow: 0 0 10px rgba(254, 44, 85, 0.3), inset 0 0 10px rgba(254, 44, 85, 0.2) !important;
+        }
+        .tt-btn svg { fill: #fe2c55; }
         .tt-btn:hover {
             background: #010101 !important;
             border-color: #fe2c55 !important;
-            box-shadow: -3px 0 10px rgba(37, 244, 238, 0.5), 3px 0 10px rgba(254, 44, 85, 0.5) !important;
+            transform: translateY(-2px);
+            box-shadow: -5px 0 15px rgba(37, 244, 238, 0.6), 5px 0 15px rgba(254, 44, 85, 0.6) !important;
+        }
+
+        /* 3. INSTAGRAM */
+        .insta-btn {
+            background: rgba(220, 39, 67, 0.08) !important;
+            border: 2px solid #dc2743 !important;
+            box-shadow: 0 0 10px rgba(220, 39, 67, 0.3), inset 0 0 10px rgba(220, 39, 67, 0.2) !important;
         }
         .insta-btn svg { fill: #dc2743; }
         .insta-btn:hover {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
             border-color: #dc2743 !important;
-            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(220, 39, 67, 0.7), 0 0 40px rgba(220, 39, 67, 0.4) !important;
         }
-        .yt-btn svg { fill: #FF0000; } 
+
+        /* 4. YOUTUBE */
+        .yt-btn {
+            background: rgba(255, 0, 0, 0.08) !important;
+            border: 2px solid #FF0000 !important;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3), inset 0 0 10px rgba(255, 0, 0, 0.2) !important;
+        }
+        .yt-btn svg { fill: #FF0000; }
         .yt-btn:hover {
             background: #FF0000 !important;
             border-color: #FF0000 !important;
-            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4) !important;
-        }
-        .da-btn:hover {
-            background: #F47321 !important;
-            border-color: #F47321 !important;
-            box-shadow: 0 6px 20px rgba(244, 115, 33, 0.4) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.4) !important;
         }
 
+        /* 5. DONATION ALERTS */
+        .da-btn {
+            background: rgba(244, 115, 33, 0.08) !important;
+            border: 2px solid #F47321 !important;
+            box-shadow: 0 0 10px rgba(244, 115, 33, 0.3), inset 0 0 10px rgba(244, 115, 33, 0.2) !important;
+        }
         .da-btn img {
             width: 20px;
             height: 20px;
             object-fit: contain;
             transition: filter 0.25s ease;
         }
-
-        .boosty-btn:hover {
-            background: #ff5e00 !important;
-            border-color: #ff5e00 !important;
-            box-shadow: 0 6px 20px rgba(255, 94, 0, 0.4) !important;
+        .da-btn:hover {
+            background: #F47321 !important;
+            border-color: #F47321 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(244, 115, 33, 0.7), 0 0 40px rgba(244, 115, 33, 0.4) !important;
         }
 
+        /* 6. BOOSTY */
+        .boosty-btn {
+            background: rgba(255, 94, 0, 0.08) !important;
+            border: 2px solid #ff5e00 !important;
+            box-shadow: 0 0 10px rgba(255, 94, 0, 0.3), inset 0 0 10px rgba(255, 94, 0, 0.2) !important;
+        }
         .boosty-btn .boosty-icon-wrapper img {
             height: 20px;
             width: auto;
@@ -134,6 +172,14 @@
             transition: filter 0.25s ease;
             filter: invert(41%) sepia(81%) saturate(5437%) hue-rotate(11deg) brightness(101%) contrast(105%);
         }
+        .boosty-btn:hover {
+            background: #ff5e00 !important;
+            border-color: #ff5e00 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(255, 94, 0, 0.7), 0 0 40px rgba(255, 94, 0, 0.4) !important;
+        }
+        
+        /* 7. TWITCH */
         .twitch-card svg { 
             fill: #a155ff; 
         }
@@ -145,6 +191,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            padding-right: 85px !important;
         }
         .twitch-card:hover {
             background: #a155ff !important;
