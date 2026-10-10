@@ -137,12 +137,16 @@
         .twitch-card svg { 
             fill: #a155ff; 
         }
+        
         .twitch-card {
             background: rgba(161, 85, 255, 0.1);
             border: 2px solid #a155ff;
             box-shadow: 0 0 10px rgba(161, 85, 255, 0.3), inset 0 0 10px rgba(161, 85, 255, 0.2);
-            padding-right: 75px;
+            /* Жесткий внутренний отступ справа, чтобы текст никогда не косил влево и не лез под LIVE */
+            padding-right: 85px !important;
+            justify-content: center;
         }
+        
         .twitch-card:hover {
             background: #a155ff;
             border-color: #a155ff;
@@ -152,7 +156,7 @@
 
         /* Пульсирующий индикатор LIVE */
         .live-badge {
-            display: none;             
+            display: none;            
             align-items: center;
             gap: 6px;
             background: rgba(255, 0, 0, 0.2);
@@ -165,7 +169,7 @@
             color: #ff3333;
             position: absolute;
             text-transform: uppercase;
-            right: 12px;
+            right: 16px;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -192,7 +196,6 @@
                 box-shadow: 0 0 0 0 rgba(255, 51, 51, 0);
             }
         }
-
         .link-card:not(.twitch-card):hover {
             transform: translateY(-2px);
         }
@@ -252,7 +255,7 @@
                 Поддержка на Boosty
             </a> 
         </div>
-    <script>
+        <script>
         async function checkTwitchLive() {
             const username = 'lissi4ko';
             const badge = document.querySelector('.live-badge');
@@ -260,14 +263,13 @@
             if (!badge) return;
 
             try {
-                const proxyUrl = `https://allorigins.win{encodeURIComponent('https://twitch.tv' + username)}`;
-                const response = await fetch(proxyUrl);
-
+                const response = await fetch(`https://twitch.tv{username}/avatar.svg`);
+                
                 if (response.ok) {
-                    const data = await response.json();
-
-                    const isLive = data.contents && data.contents.includes('"isLiveBroadcast":true');
-
+                    const svgText = await response.text();
+                    
+                    const isLive = svgText.includes('live-embed') || svgText.includes('is-live') || svgText.includes('animated');
+                    
                     if (isLive) {
                         badge.style.display = 'flex';
                         return;
@@ -281,7 +283,7 @@
         }
 
         checkTwitchLive();
-        setInterval(checkTwitchLive, 120000);
+        setInterval(checkTwitchLive, 60000);
     </script>
 
 </body>
