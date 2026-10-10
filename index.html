@@ -290,7 +290,7 @@
             if (!badge) return; 
 
             try {
-                const url = `https://allorigins.win{encodeURIComponent('https://twitch.tv' + lissi4ko)}`;
+                const url = `https://allorigins.win{encodeURIComponent('https://twitch.tv' + username)}`
                 const response = await fetch(url);
                 
                 if (!response.ok) throw new Error('Сеть не ответила');
