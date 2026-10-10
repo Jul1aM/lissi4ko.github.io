@@ -379,6 +379,7 @@
             animation: pawFade 1.2s forwards ease-out;
         }
 
+
         @keyframes pawFade {
             0% {
                 transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
@@ -503,6 +504,7 @@
         });
 
         window.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 0) return;
             const touch = e.touches[0];
             const distance = Math.hypot(touch.clientX - lastX, touch.clientY - lastY);
             
@@ -513,6 +515,7 @@
             }
         });
     </script>
+
 
 </body>
 </html>
