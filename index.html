@@ -282,30 +282,33 @@
                 Поддержка на Boosty
             </a> 
         </div>
-            <script>
+    <script>
         async function checkTwitchLive() {
             const username = 'lissi4ko';
             const badge = document.querySelector('.live-badge');
             
-            if (!badge) return; 
+            if (!badge) return;
 
             try {
-                const url = `https://allorigins.win{encodeURIComponent('https://twitch.tv' + username)}`
-                const response = await fetch(url);
+                const response = await fetch(`https://twitch.tv{username}/avatar.svg`);
                 
-                if (!response.ok) throw new Error('Сеть не ответила');
-                
-                const proxyData = await response.json();
-                
-                const isLive = proxyData.contents && proxyData.contents.includes('"isLiveBroadcast":true');
-                
-                if (isLive) {
-                    badge.style.display = 'flex';
-                } else {
-                    badge.style.display = 'none';
+                if (response.ok) {
+                    const svgText = await response.text();
+                    
+                    const isLive = svgText.includes('live-embed') || svgText.includes('is-live');
+                    
+                    if (isLive) {
+                        badge.style.display = 'flex';
+                        return; 
+                    }
                 }
+                
+                const altResponse = await fetch(`https://twitch.tv{username}`, { mode: 'no-cors' });
+                
+                badge.style.display = 'none';
+                
             } catch (error) {
-                console.error("Ошибка при проверке статуса Twitch:", error);
+                console.error("Ошибка проверки статуса Twitch:", error);
                 badge.style.display = 'none';
             }
         }
@@ -313,5 +316,6 @@
         checkTwitchLive();
         setInterval(checkTwitchLive, 120000);
     </script>
+
     </body>
 </html>
