@@ -39,19 +39,17 @@
             padding: 0;
             width: max-content;
             user-select: none;
-            color: #ffffff;
+            background: linear-gradient(135deg, #ff9d42 0%, #ff5e00 50%, #ff3c00 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
             filter: drop-shadow(0 2px 12px rgba(255, 94, 0, 0.45));
         }
         h1::first-letter {
             position: absolute;
             right: 100%;             
-            margin-right: 12px;      
-            color: initial !important;
-        }
-        h1 {
-            background: linear-gradient(135deg, #ff9d42 0%, #ff5e00 50%, #ff3c00 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
+            margin-right: 12px; 
+            -webkit-text-fill-color: initial !important;
+            background: none !important;
         }
         .links-container {
             display: flex;
