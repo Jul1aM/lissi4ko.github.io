@@ -40,6 +40,23 @@
             width: 100%;
             user-select: none;            
             filter: drop-shadow(0 2px 8px rgba(255, 94, 0, 0.3));
+        }     
+        .profile-header {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center;
+            margin-bottom: 25px; 
+        }
+        .profile-header h1 {
+            display: inline-flex; 
+            align-items: center;   
+            justify-content: center;
+            gap: 10px; 
+        }
+        .fox-emoji {
+            display: inline-block;
+            line-height: 1;
         }
        
         .description {
@@ -361,12 +378,13 @@
     </style>
 </head>
 </body>
-
-    <div class="container">
-        <h1>🦊<span>Lissi4ko</span></h1>
-        <div class="description">🧡 Все мои ссылки 🧡</div>
-
-        <div class="links-container">
+    <div class="profile-header">
+    <h1>
+        <span class="fox-emoji">🦊</span>
+        <span class="nickname">Lissi4ko</span>
+    </h1>
+    <p class="sub-title">🧡 Все мои ссылки 🧡</p>
+    </div>
             
             <!-- 1. Твич с неоном и LIVE статусом -->
             <a href="https://www.twitch.tv/lissi4ko" target="_blank" class="link-card twitch-card">
