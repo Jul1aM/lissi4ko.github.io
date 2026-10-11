@@ -29,19 +29,20 @@
             text-align: center;
         }
         /* Никнейм Lissi4ko */
-        h1 {
-            font-size: 36px; 
-            font-weight: 800; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin: 10px auto 12px auto;
-            width: 100%;
-            user-select: none;            
-            filter: drop-shadow(0 2px 8px rgba(255, 94, 0, 0.3));
-        }     
+       h1 {
+           font-size: 36px;
+           font-weight: 800;
+           display: inline-flex; 
+           align-items: center;
+           justify-content: center;
+           gap: 12px;
+           margin: 10px auto 12px auto; 
+           user-select: none;
+           filter: drop-shadow(0 2px 8px rgba(255, 94, 0, 0.3));
+       }
         .profile-header {
+            width: 100%;
+            display: block;
             text-align: center;
             margin-bottom: 25px;
         }
@@ -57,7 +58,6 @@
             display: flex;
             flex-direction: column;
             gap: 14px;
-            align-items: center;
         }
 
         .link-card {
@@ -78,8 +78,6 @@
             backdrop-filter: blur(8px) !important;
             position: relative;
             cursor: pointer;
-            width: 100%; 
-            max-width: 600px;
         }
 
         .link-card svg {
